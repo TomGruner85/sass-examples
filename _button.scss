@@ -1,0 +1,195 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    position: relative;
+    border-radius: 10rem;
+    font-size: $default-font-size;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: translateY(-0.3rem);
+      transform: scale(1.5, 1.5);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    outline: none;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    z-index: -1;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-gray-dark-1;
+    font-weight: 400;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+
+    &-centered{
+    
+      &,
+      &:link,
+      &:visited {
+        display: block;
+        margin: 0 auto;
+        padding-right: 2rem;
+      }
+      
+    }
+  }
+
+  &--animated {
+  }
+}
+
+.btn--text {
+  &,
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    padding: 1rem 2rem;
+    padding-right: 4rem;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    text-decoration: none;
+    color: $color-gray-dark-3;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: 3px solid $color-primary;
+    transition: all 0.2s;
+    display: table;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &-symetric{
+    &,
+    &:visited,
+    &:link{
+      padding-right: 2rem;
+      display: inline-block;
+      background-color: $color-gray-light-2;
+      margin-bottom: 2rem;
+    }
+  }
+      
+
+  &-inline{
+    display: inline;
+    margin-left: 4rem;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &:hover &__icon {
+    color: $color-white;
+    stroke-width: 1.5px;
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+  }
+
+  &__icon {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 25%;
+    right: 1rem;
+    stroke-width: 2px;
+    color: $color-primary;
+    transform: translate(0, -15%);
+
+    @include mediaTemplate(tab-land) {
+      transform: translate(0, -10%);
+    }
+
+    @include mediaTemplate(tab-port) {
+      transform: translate(10%, -15%);
+    }
+
+    @include mediaTemplate(phone) {
+      transform: translate(15%, -15%);
+    }
+
+    @include mediaTemplate(desktop) {
+      size: 32px;
+      transform: translate(0%, -15%);
+    }
+  }
+}
+
+.btn--action {
+  &,
+  &:link,
+  &:visited {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    border: none;
+    width: 100%;
+    padding: 1rem 0;
+    cursor: pointer;
+    font-size: $default-font-size;
+    box-shadow: 0 1rem 4rem;
+    transition: all 0.2s;
+    text-decoration: none;
+    text-align: center;
+  }
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+}
